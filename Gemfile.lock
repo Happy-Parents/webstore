@@ -102,6 +102,7 @@ GEM
       execjs (~> 2)
     awesome_nested_set (3.8.0)
       activerecord (>= 4.0.0, < 8.1)
+    awesome_print (1.9.2)
     backport (1.2.0)
     base64 (0.3.0)
     bcrypt (3.1.20)
@@ -386,7 +387,7 @@ GEM
     popper_js (1.16.1)
     pp (0.6.2)
       prettyprint
-    prettyprint (0.2.0)
+    prettyprint (0.1.1)
     prism (1.4.0)
     pry (0.15.2)
       coderay (~> 1.1)
@@ -810,6 +811,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
+  awesome_print (~> 1.9, >= 1.9.2)
   bootsnap
   brakeman
   capybara (~> 3.39)
