@@ -1,94 +1,125 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-ruby '2.2.3'
+ruby '3.4.2'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.4'
-# Use postgresql as the database for Active Record
-gem 'pg'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+# Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+gem 'rails', '~> 8.0.0'
 
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
+# Use pg as the database for Active Record
+gem "pg", "~> 1.1"
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+# Use the Puma web server [https://github.com/puma/puma]
+gem "puma", ">= 5.0"
 
-# ActiveModelSerializers
-gem 'active_model_serializers'
+# Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
+gem "importmap-rails"
 
-# Use Puma as the app server
-gem 'puma'
+# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
+gem "turbo-rails"
+
+# Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
+gem "stimulus-rails"
+
+# Build JSON APIs with ease [https://github.com/rails/jbuilder]
+gem "jbuilder"
+
+# Use Mini Racer for JavaScript runtime (required for asset precompilation)
+gem 'mini_racer', platforms: :ruby
+
+# Use Redis adapter to run Action Cable in production
+gem "redis", ">= 4.0.1"
+
+# Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
+# gem "kredis"
+
+# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
+# gem "bcrypt", "~> 3.1.7"
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem "tzinfo-data", platforms: %i[ windows jruby ]
+
+# Reduces boot times through caching; required in config/boot.rb
+gem "bootsnap", require: false
+
+# Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
+gem "image_processing", "~> 1.13"
 
 group :development, :test do
+  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem "debug", platforms: %i[ mri windows ]
+
+  gem 'brakeman'
+  gem 'dotenv-rails', '~> 3.1'
+  gem 'rubocop', '~> 1.23'
+  gem 'rubocop-performance'
+  gem 'rubocop-rails'
+  gem 'selenium-webdriver', '~> 4.10.0'
+
+  # monitoring
   gem 'pry'
   gem 'pry-remote'
-  gem 'pry-stack_explorer'
-  gem 'pry-nav'
-  gem 'better_errors'
-  gem 'binding_of_caller'
+end
 
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
+group :development do
+  gem "foreman"
 
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem "web-console"
 
-  # testing
-  gem 'rspec-rails', '~> 3.0'
-  gem 'rspec-activemodel-mocks'
-  gem 'rspec-activejob'
-  gem 'nyan-cat-formatter'
-  gem 'shoulda-matchers', require: false
-  gem 'factory_girl'
-  gem 'factory_girl_rails'
-  gem 'database_cleaner'
-  gem 'ffaker'
-  gem 'quiet_assets'
+  # Preview emails in the browser [https://github.com/plataformatec/letter_opener]
+  gem "letter_opener"
+
+  # LSP support for Ruby
+  gem 'solargraph'
+  gem 'solargraph-rails'
+  gem 'ruby-lsp'
+  gem 'ruby-lsp-rails'
+
+  # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
+  # gem "rack-mini-profiler"
+
+  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
+  # gem "spring"
 end
 
 group :test do
-  gem 'vcr'
-  gem 'webmock'
-  gem 'codeclimate-test-reporter', require: nil
+  gem 'capybara', '~> 3.39'
+  gem 'capybara-screenshot', '~> 1.0'
+  gem 'email_spec'
+  gem 'factory_bot'
+  gem 'factory_bot_rails'
+  gem 'database_cleaner'
+  gem 'rspec-activemodel-mocks', '~> 1.0'
+  gem 'rspec-rails', '~> 8.0'
+  gem 'rspec-retry'
+  gem 'rspec_junit_formatter'
+  gem 'rubocop-rspec'
+  gem 'jsonapi-rspec'
+  gem 'simplecov'
+  gem 'webmock', '~> 3.7', require: false
+  gem 'timecop'
+  gem 'rails-controller-testing'
+  gem 'webdrivers', '~> 5.0'
 end
 
-# Heroku fix
-group :production, :staging do
-  gem 'rails_12factor'
-end
-
-# file uploades & assets
-gem 'paperclip' # Image Rescaling for aws
-gem 'aws-sdk', '< 2.0'
-gem 'fog-aws'
-gem 'asset_sync'
-
-# caching
-gem 'dalli' # memcache
-gem 'rack-cache' # http caching
-gem 'kgio' # faster kgio IO system
-
-# rollbar
-gem 'rollbar', '~> 1.5.0'
-
-# newrelic
-gem 'newrelic_rpm'
-
-# sidekiq
+# Use Sidekiq for background jobs
 gem 'sidekiq'
-gem 'sinatra', require: nil
 
-# front end
-gem 'browserify-rails'
+# Use Devise for authentication
+gem "devise"
+
+# Sentry for error/performance monitoring
+gem 'sentry-ruby'
+gem 'sentry-rails'
+gem 'sentry-sidekiq'
+
+# Spree gems
+spree_opts = '~> 5.1.0.beta'
+gem "spree", spree_opts
+gem "spree_emails", spree_opts
+gem "spree_sample", spree_opts
+gem "spree_admin", spree_opts
+gem "spree_storefront", spree_opts
+gem "spree_i18n"
+gem "spree_google_analytics", "~> 1.0"
+gem "spree_klaviyo", "~> 1.0"
