@@ -19,4 +19,5 @@ test:
 
 production:
   <<: *default
-  database: hp_webstore_production
+  database: <%= ENV['DB_NAME'] || 'hp_webstore_production' %>
+  url: <%= ENV['DATABASE_URL'] %>
