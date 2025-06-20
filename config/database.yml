@@ -9,7 +9,7 @@ default: &default
 
 development: &development
   <<: *default
-  database: hp_webstore_development
+  database: <%= ENV['DB_NAME'] || Rails.application.credentials.dig(:db, :db_name) || 'hp_webstore_development' %>
   gssencmode: disable
 
 test:
@@ -19,5 +19,5 @@ test:
 
 production:
   <<: *default
-  database: <%= ENV['DB_NAME'] || 'hp_webstore_production' %>
+  database: <%= ENV['DB_NAME'] || Rails.application.credentials.dig(:db, :db_name) || 'hp_webstore_production' %>
   url: <%= ENV['DATABASE_URL'] %>

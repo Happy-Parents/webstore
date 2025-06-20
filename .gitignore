@@ -7,9 +7,10 @@
 
 # Ignore all logfiles and tempfiles.
 /log/*
-/tmp/*
 !/log/.keep
+/tmp/*
 !/tmp/.keep
+!/tmp/db_backups
 
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
