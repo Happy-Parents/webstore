@@ -53,6 +53,7 @@ end
 # uncomment lines below to add your own custom business logic
 # such as promotions, shipping methods, etc
 Rails.application.config.after_initialize do
+  Rails.application.config.spree.themes << Spree::Themes::HappyParentsTheme
   # Rails.application.config.spree.shipping_methods << Spree::ShippingMethods::SuperExpensiveNotVeryFastShipping
   # Rails.application.config.spree.payment_methods << Spree::PaymentMethods::VerySafeAndReliablePaymentMethod
 
