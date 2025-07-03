@@ -35,7 +35,7 @@
                 <% cache spree_base_cache_scope.call(current_store) do %>
                   <% Spree::Store::SUPPORTED_SOCIAL_NETWORKS.each do |media| %>
                     <% if current_store.send(media).present? %>
-                      <%= link_to current_store.send("#{media}_link") do %>
+                      <%= link_to current_store.send("#{media}_link"), target: "_blank", rel: "noopener noreferrer"  do %>
                         <%= render "spree/shared/icons/#{media.gsub('_', '-')}" %>
                         <span class='hidden'><%= current_store.send("#{media}_handle") %></span>
                       <% end %>
