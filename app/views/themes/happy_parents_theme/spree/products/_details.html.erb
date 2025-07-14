@@ -1,7 +1,7 @@
 <% cache spree_base_cache_scope.call(product) do %>
   <% if product.storefront_description.present? %>
     <% description_text = strip_tags(product.storefront_description) %>
-    <div data-controller="read-more" class="py-4 flex flex-col gap-4" data-read-more-more-text-value="<%= Spree.t(:read_more) %>" data-read-more-less-text-value="Read less">
+    <div data-controller="read-more" class="py-4 flex flex-col gap-4" data-read-more-more-text-value="<%= Spree.t(:read_more) %>" data-read-more-less-text-value="<%= Spree.t(:read_less) %>">
       <div class="prose product-description text-sm <%= 'product-description-truncated' if description_text.size > 250 %>" data-read-more-target="content">
         <%= raw(product.storefront_description) %>
       </div>

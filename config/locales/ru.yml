@@ -745,6 +745,7 @@ ru:
     flat_rate_per_order: "Фиксированная ставка (за заказ)"
     flexible_rate: "Гибкая ставка"
     forgot_password: "Забыли пароль?"
+    follow_us: Клуб счастливых родителей
     free_shipping: "Бесплатная доставка"
     free_shipping_amount:
     front_end: "в публичном интерфейсе"
@@ -1148,6 +1149,8 @@ ru:
     quantity_shipped: "Отправленное количество"
     quick_search: "Поиск . . ."
     rate: "Ставка"
+    read_more: "Читать дальше"
+    read_less: "Закрыть описание"
     reason: "Причина"
     receive: "Получить"
     receive_stock: "Получить товар"
@@ -1159,7 +1162,7 @@ ru:
     refund_amount_must_be_greater_than_zero:
     refund_reasons: "Причины возврата"
     refunded_amount:
-    refunds:
+    refunds: Возмещения
     register: "Зарегистрироваться как новый пользователь"
     registration: "Регистрация"
     reimburse:

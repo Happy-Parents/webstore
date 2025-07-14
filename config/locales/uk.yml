@@ -1695,6 +1695,8 @@ uk:
     quantity_shipped: Кількість відвантажених
     quick_search: Швидкий пошук..
     rate: Ставка
+    read_more: "Читати далі"
+    read_less: "Закрити опис"
     reason: Причина
     receive: отримати
     receive_stock: Отримати запас
