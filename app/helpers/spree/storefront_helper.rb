@@ -2,6 +2,7 @@
 
 # Patch for :svg_country_icon method
 # TODO: delete after contribution pull request will be merged and released
+# PR #12953 (https://github.com/spree/spree/pull/12953)
 module Spree
   module StorefrontHelper
     # include BaseHelper
