@@ -78,12 +78,16 @@
         <div
           class='flex items-center gap-4 flex-1 justify-end<%= " lg:flex-none order-2" unless layout == "logo-centered" %>'
         >
+          <!-- Desktop Account -->
+
+          <!-- Locale -->
+          <div class="flex lg:flex items-center gap-4">
           <% if should_render_currency_dropdown? || should_render_locale_dropdown? %>
             <div
             data-controller="modal"
             data-modal-allow-background-close="true"
             data-modal-
-            class="hidden lg:flex"
+            class="flex lg:flex"
             data-modal-backdrop-color-value="rgba(0,0,0,0.32)">
               <%= button_tag class: 'flex gap-2 items-center', data: {action: 'modal#open'} do %>
                 <% if should_render_currency_dropdown? %>
@@ -102,20 +106,19 @@
               <%= turbo_frame_tag :settings_modal, src: spree.settings_path, loading: :eager  %>
             </div>
           <% end %>
-
-          <!-- Desktop Account -->
-          <div class='hidden lg:flex'>
-            <% if show_account_pane? %>
-              <button
-                data-action='click->slideover-account#toggle click@window->slideover-account#hide click->toggle-menu#hide touch->toggle-menu#hide'
-              >
-                <%= render 'spree/shared/icons/account', color: section.preferred_text_color, section: section %>
-              </button>
-            <% else %>
-              <%= link_to spree.account_path do %>
-                <%= render 'spree/shared/icons/account', color: section.preferred_text_color, section: section %>
+            <div class="hidden lg:flex items-center">
+              <% if show_account_pane? %>
+                <button
+                  data-action='click->slideover-account#toggle click@window->slideover-account#hide click->toggle-menu#hide touch->toggle-menu#hide'
+                >
+                  <%= render 'spree/shared/icons/account', color: section.preferred_text_color, section: section %>
+                </button>
+              <% else %>
+                <%= link_to spree.account_path do %>
+                  <%= render 'spree/shared/icons/account', color: section.preferred_text_color, section: section %>
+                <% end %>
               <% end %>
-            <% end %>
+            </div>
           </div>
 
           <% if show_account_pane? %>
