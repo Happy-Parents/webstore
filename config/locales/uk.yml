@@ -1777,6 +1777,7 @@ uk:
     rma_value: Значення RMA
     role_id: Ідентифікатор ролі
     roles: Ролі
+    ru: Рус
     rules: Правила
     safe: Безпечно
     sales_total: Загальна сума продажів
@@ -2081,6 +2082,7 @@ uk:
     type: Тип
     type_to_search: Введіть для пошуку
     twitter: Twitter
+    uk: Укр
     unable_to_connect_to_gateway: Неможливо підключитися до шлюзу.
     unable_to_create_reimbursements: Неможливо створити компенсації через наявні товари, що очікують ручної інтервенції.
     under_price: Під %{price}

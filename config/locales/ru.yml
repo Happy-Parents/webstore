@@ -773,7 +773,7 @@ ru:
       available_locales: "Доступные переводы"
       language: "Язык"
       localization_settings: "Настройки локализации"
-      this_file_language: российский
+      this_file_language: русский
       locales_displayed_on_frontend_select_box: "Локаль, отображаемая в frontend части (раскрывающийся список)"
       supported_locales: "Поддерживаемые локализации"
       translations: "Перевод"
@@ -1221,6 +1221,7 @@ ru:
     rma_value: "Сумма RMA"
     role_id: "Роль"
     roles: "Роли"
+    ru: Рус
     rules: "Правила"
     safe: "Безопасный"
     sales_total: "Итого (продажи)"
@@ -1441,6 +1442,7 @@ ru:
     tree: "Дерево"
     type: "Тип"
     type_to_search: "Начните печатать чтобы активировать поиск"
+    uk: Укр
     unable_to_connect_to_gateway: "Не удалось подключиться к платёжному шлюзу."
     unable_to_create_reimbursements:
     under_price: "Дешевле %{price}"

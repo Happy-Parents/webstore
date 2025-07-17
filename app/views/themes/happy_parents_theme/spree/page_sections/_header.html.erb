@@ -99,7 +99,7 @@
                   <span class="uppercase <%= should_render_currency_dropdown?.presence && "border-l pl-2" %> flex items-center gap-1">
                     <% country_code = current_locale.to_s.split("-").last %>
                     <%= svg_country_icon(country_code) %>
-                    <span ><%= country_code %></span>
+                    <span ><%= localized_country_code(country_code) %></span>
                   </span>
                 <% end %>
               <% end %>
